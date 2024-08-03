@@ -1,7 +1,8 @@
 using Code.Infrastructure.Configs;
+using Code.Infrastructure.DataHandling;
 using UnityEngine;
 
-namespace Code.Infrastructure
+namespace Code.Infrastructure.LevelConfigHandling
 {
     public class LevelConfigWriter : MonoBehaviour
     {
@@ -11,7 +12,7 @@ namespace Code.Infrastructure
         {
             if (!IsMatchClustersToWords()) return;
 
-            DataWriter.DataWriter.WriteToJson(_levelConfig);
+            DataWriter.WriteToJson(_levelConfig, InfrastructureConstants.LevelConfigPath);
         }
 
         private bool IsMatchClustersToWords()

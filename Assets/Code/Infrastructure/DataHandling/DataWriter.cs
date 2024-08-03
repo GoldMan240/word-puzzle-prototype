@@ -2,13 +2,12 @@ using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Code.Infrastructure.DataWriter
+namespace Code.Infrastructure.DataHandling
 {
     public class DataWriter
     {
-        public static void WriteToJson<T>(T data)
+        public static void WriteToJson<T>(T data, string path)
         {
-            string path = Application.dataPath + "/Resources/LevelConfig/LevelConfig.json";
             Task task = File.WriteAllTextAsync(path, JsonUtility.ToJson(data));
             Debug.Log("Starting to write to " + path + "...");
             task.Wait();
