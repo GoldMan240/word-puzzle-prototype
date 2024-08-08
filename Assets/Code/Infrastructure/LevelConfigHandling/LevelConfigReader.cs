@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace Code.Infrastructure.LevelConfigHandling
 {
-    public class LevelConfigReader : MonoBehaviour
+    public class LevelConfigReader
     {
-        
         public LevelConfig Read()
         {
             LevelConfig levelConfig = DataReader.ReadFromJson<LevelConfig>(InfrastructureConstants.LevelConfigPath);
