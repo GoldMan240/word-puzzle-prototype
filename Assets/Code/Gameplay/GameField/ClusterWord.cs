@@ -27,8 +27,8 @@ namespace Code.Gameplay.GameField
                     return false;
 
                 word += clusterCell.Cluster.Letters;
-                Debug.Log(clusterCell.Cluster.Letters);
-                Debug.Log(word);
+                // Debug.Log(clusterCell.Cluster.Letters);
+                // Debug.Log(word);
 
             }
             Debug.Log(word);
