@@ -3,6 +3,7 @@ using System.Linq;
 using Code.Extensions;
 using Code.Gameplay.Factory;
 using Code.Gameplay.GameField;
+using Code.Gameplay.UI;
 using Code.Infrastructure.Configs;
 using Code.Infrastructure.LevelConfigHandling;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace Code.Gameplay
         [SerializeField] private Transform _wordRoot;
         [SerializeField] private Transform _clusterRoot;
         [SerializeField] private Button _checkWordsButton;
+        [SerializeField] private WinWindow _winWindow;
         
         private IGameFactory _gameFactory;
         private LevelConfigReader _levelConfigReader;
@@ -74,13 +76,14 @@ namespace Code.Gameplay
 
         private void CheckIfAllWordsGuessed()
         {
-            List<string> words = _words;
+            List<string> guessedWords = new();
             
             foreach (ClusterWord clusterWord in _clusterWords)
             {
-                if (clusterWord.TryToMakeWord(out string word) && words.Contains(word))
+                if (clusterWord.TryToMakeWord(out string word) && _words.Contains(word))
                 {
-                    words.Remove(word);
+                    _words.Remove(word);
+                    guessedWords.Add(word);
                     continue;
                 }
                 Debug.Log("Not all words are guessed");
@@ -88,6 +91,8 @@ namespace Code.Gameplay
             }
             
             Debug.Log("All words are guessed");
+            _winWindow.Setup(guessedWords);
+            _winWindow.Open();
         }
     }
 }
