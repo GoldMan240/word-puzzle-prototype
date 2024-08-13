@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8052402544666903691}
   - component: {fileID: 8052402544666903690}
-  - component: {fileID: -8665093292169431756}
   m_Layer: 0
   m_Name: LevelConfigHandling
   m_TagString: Untagged
@@ -47,23 +46,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelConfig:
     WordConfigs:
-    - Word: buba
+    - Word: office
       WordClusters:
-      - bu
-      - ba
-    - Word: momo
+      - of
+      - fi
+      - ce
+    - Word: figure
       WordClusters:
-      - mo
-      - mo
---- !u!114 &-8665093292169431756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8052402544666903693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8005236317e430cb630153da9cd5e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      - fi
+      - gure
+    - Word: dinner
+      WordClusters:
+      - din
+      - ner
+    - Word: course
+      WordClusters:
+      - co
+      - ur
+      - se
