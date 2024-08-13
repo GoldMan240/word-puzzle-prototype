@@ -1,4 +1,4 @@
-namespace Code.Gameplay.AssetManagment
+namespace Code.Infrastructure.AssetManagement
 {
     public class AssetPath
     {

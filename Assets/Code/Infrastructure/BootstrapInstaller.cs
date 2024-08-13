@@ -1,9 +1,7 @@
-using System;
-using Code.Gameplay.AssetManagment;
-using Code.Gameplay.Factory;
+using Code.Infrastructure.AssetManagement;
 using Zenject;
 
-namespace Code.Gameplay
+namespace Code.Infrastructure
 {
     public class BootstrapInstaller : MonoInstaller
     {

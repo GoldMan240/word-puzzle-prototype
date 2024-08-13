@@ -1,5 +1,5 @@
-using Code.Gameplay.AssetManagment;
 using Code.Gameplay.GameField;
+using Code.Infrastructure.AssetManagement;
 using UnityEngine;
 
 namespace Code.Gameplay.Factory

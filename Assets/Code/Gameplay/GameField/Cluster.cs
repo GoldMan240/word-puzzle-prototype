@@ -39,13 +39,13 @@ namespace Code.Gameplay.GameField
             if (!Camera.main) return;
             
             Ray ray = new(transform.position + Vector3.back, Vector3.forward);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, RayDistance, LayerMask.GetMask("ClusterCell"));
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, RayDistance, GameConstants.ClusterStorageLayer);
 
-            if (hit.collider && hit.collider.TryGetComponent(out ClusterCell clusterCell))
+            if (hit.collider && hit.collider.TryGetComponent(out IClusterStorage clusterStorage))
             {
-                if (clusterCell.IsEmpty)
+                if (clusterStorage.IsEmpty)
                 {
-                    transform.SetParent(clusterCell.transform);
+                    clusterStorage.SnapCluster(this);
                     transform.DOLocalMove(Vector3.zero, 0.25f);
                 }
                 else
